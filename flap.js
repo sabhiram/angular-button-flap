@@ -8,10 +8,12 @@ Dependencies:
     None
 
 Inputs:
-    @data           - An array with the following touples:
-                        [[icon class, url] ... ]
+    =items           - An array with the following touples:
+                        [[icon class, name, url] ... ]
 
-    @orientation    - Which wall to bind to: ["left", "top", "right"*, "bottom"]
+    @orientation     - Which wall to bind to: ["left", "top", "right"*, "bottom"]
+
+    @expand_on_hover - boolean
 
 Description:
     Button flap directive
@@ -22,18 +24,26 @@ module.directive("sabButtonFlap", function($window) {
         restrict: "E",
 
         scope: {
-            items:       "=",
-            orientation: "@"
+            items:           "=",
+            orientation:     "@",
+            expand_on_hover: "="
         },
 
         replace:    true,
-        transclude: true,
+        transclude: false,
 
         template: [
-            "<div class='sab-flap-container {{orientation}}' ng-mouseenter='focused = true' ng-mouseleave='focused = false'>",
-            "    <div class='sab-flap-item' ng-repeat='item in items' ng-click='goto_url(item[1])'>",
-            "        <i class='fa fa-lg {{item[0]}}'></i>",
+            "<div class         = 'sab-flap-container {{orientation}}'",
+            "     ng-mouseenter = 'focused = true'",
+            "     ng-mouseleave = 'focused = false' >",
+            "",
+            "    <div class     = 'sab-flap-item'",
+            "         ng-repeat = 'item in items'",
+            "         ng-click  = 'goto_url(item[1])' >",
+            "",
+            "         <i class = 'fa fa-lg {{item[0]}}'></i>",
             "    </div>",
+            "",
             "</div>",
         ].join("\n"),
 
