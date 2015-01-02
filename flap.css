@@ -2,9 +2,13 @@
     position: absolute;
 
     background-color: white;
-    color: #202020;
+    color: black;
 
+    -webkit-transition: all 0.3s linear 0.0s;
     padding: 0;
+}
+.sab-flap-container:hover {
+    background-color: #a0a0a0;
 }
 
 .sab-flap-container.left {
@@ -32,6 +36,105 @@
     height: 40px;
 }
 
+.sab-flap-container.right:before,
+.sab-flap-container.left:before,
+.sab-flap-container.right:after,
+.sab-flap-container.left:after,
+.sab-flap-container.top:before,
+.sab-flap-container.top:after,
+.sab-flap-container.bottom:before,
+.sab-flap-container.bottom:after {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    -webkit-transition: all 0.3s linear 0.0s;
+}
+.sab-flap-container.right:before,
+.sab-flap-container.left:before,
+.sab-flap-container.right:after,
+.sab-flap-container.left:after {
+    width: 40px; height: 30px;
+}
+.sab-flap-container.right:before,
+.sab-flap-container.left:before {
+    top: -30px; left: 0;
+}
+.sab-flap-container.right:after,
+.sab-flap-container.left:after {
+    top: 100%; left: 0;
+}
+.sab-flap-container.left:before {
+    border-width: 30px 0 0 40px;
+    border-color: transparent transparent transparent white;
+}
+.sab-flap-container.left:hover:before {
+    border-color: transparent transparent transparent #a0a0a0;
+}
+.sab-flap-container.left:after {
+    border-width: 30px 40px 0 0;
+    border-color: white transparent transparent transparent;
+}
+.sab-flap-container.left:hover:after {
+    border-color: #a0a0a0 transparent transparent transparent;
+}
+.sab-flap-container.right:before {
+    border-width: 0 0 30px 40px;
+    border-color: transparent transparent white transparent;
+}
+.sab-flap-container.right:hover:before {
+    border-color: transparent transparent #a0a0a0 transparent;
+}
+.sab-flap-container.right:after {
+    border-width: 0 40px 30px 0;
+    border-color: transparent white transparent transparent;
+}
+.sab-flap-container.right:hover:after {
+    border-color: transparent #a0a0a0 transparent transparent;
+}
+
+.sab-flap-container.top:before,
+.sab-flap-container.top:after,
+.sab-flap-container.bottom:before,
+.sab-flap-container.bottom:after {
+    width: 30px; height: 40px;
+}
+.sab-flap-container.top:before,
+.sab-flap-container.bottom:before {
+    left: -30px; top: 0;
+}
+.sab-flap-container.top:after,
+.sab-flap-container.bottom:after {
+    left: 100%; top: 0;
+}
+.sab-flap-container.top:before {
+    border-width: 0 30px 40px 0;
+    border-color: transparent white transparent transparent;
+}
+.sab-flap-container.top:hover:before {
+    border-color: transparent #a0a0a0 transparent transparent;
+}
+.sab-flap-container.top:after {
+    border-width: 40px 30px 0 0;
+    border-color: white transparent transparent transparent;
+}
+.sab-flap-container.top:hover:after {
+    border-color: #a0a0a0 transparent transparent transparent;
+}
+.sab-flap-container.bottom:before {
+    border-width: 0 0 40px 30px;
+    border-color: transparent transparent white transparent;
+}
+.sab-flap-container.bottom:hover:before {
+    border-color: transparent transparent #a0a0a0 transparent;
+}
+.sab-flap-container.bottom:after {
+    border-width: 40px 0 0 30px;
+    border-color: transparent transparent transparent white;
+}
+.sab-flap-container.bottom:hover:after {
+    border-color: transparent transparent transparent #a0a0a0;
+}
+
 .sab-flap-item {
     width: 32px;
     height: 32px;
@@ -51,7 +154,7 @@
 }
 .sab-flap-item:hover {
     background-color: #202020;
-    color: white;
+    color: yellow;
 }
 
 .sab-flap-item i {
