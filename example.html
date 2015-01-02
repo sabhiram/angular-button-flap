@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="flap.css">
 
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+
     <style>
         body {
             background-color: #202020;
@@ -30,9 +33,6 @@
     <div class="container">
         <div class="row"><h1><u>Button Flap Sample</u></h1></div>
 
-        <br>
-        <br>
-        <br>
         <div id="some-box" class="row" style="position: relative;">
             <br>
             <h2>This is a random div</h2>
@@ -43,10 +43,12 @@
         </div>
     </div>
 
+
     <sab-button-flap
         items       = "items"
         orientation = "right">
     </sab-button-flap>
+
 
     <sab-button-flap
         items       = "items"
@@ -69,6 +71,13 @@
                     ["fa-github"     , "https://github.com/sabhiram" ]
                 ];
             });
+        });
+
+        $(function() {
+            $( ".sab-flap-container.left" ).draggable(  { axis: "y", containment: "parent" });
+            $( ".sab-flap-container.right" ).draggable( { axis: "y", containment: "parent" });
+            $( ".sab-flap-container.top" ).draggable(   { axis: "x", containment: "parent" });
+            $( ".sab-flap-container.bottom" ).draggable({ axis: "x", containment: "parent" });
         });
     </script>
 
