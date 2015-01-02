@@ -1,8 +1,62 @@
-#sab-flap-container {
+.sab-flap-container {
     position: absolute;
 
     background-color: white;
+    color: #202020;
 
-    right: 0; width: 50px;
-    top: 100px; height: 200px;
+    padding: 0;
 }
+
+.sab-flap-container.left {
+    left: 0; top: 100px;
+
+    width: 40px;
+    height: auto;
+}
+.sab-flap-container.right {
+    right: 0; top: 100px;
+
+    width: 40px;
+    height: auto;
+}
+.sab-flap-container.bottom {
+    bottom: 0; left: 100px;
+
+    width: auto;
+    height: 40px;
+}
+.sab-flap-container.top {
+    top: 0; left: 100px;
+
+    width: auto;
+    height: 40px;
+}
+
+.sab-flap-item {
+    width: 32px;
+    height: 32px;
+
+    border-radius: 100%;
+    border: 2px solid #000000;
+
+    margin: 4px;
+
+    text-align: center;
+    vertical-align: center;
+
+    -webkit-transition: all 0.3s linear 0.0s;
+    cursor: pointer;
+
+    float: left;
+}
+.sab-flap-item:hover {
+    background-color: #202020;
+    color: white;
+}
+
+.sab-flap-item i {
+    padding-top: 9px;
+    margin-left: auto;
+    margin-right: auto;
+}
+

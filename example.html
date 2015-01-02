@@ -11,6 +11,17 @@
             background-color: #202020;
             color: #d0d0d0;
         }
+
+        #some-box {
+            width: 100%;
+            height: 200px;
+
+            background-color: #404040;
+            border: 3px solid #d0d0d0;
+
+            text-align: center;
+            vertical-align: center;
+        }
     </style>
 </head>
 
@@ -18,22 +29,39 @@
 
     <div class="container">
         <div class="row"><h1>Button Flap Sample</h1></div>
+
+        <br>
+        <br>
+        <br>
+        <div id="some-box" class="row" style="position: relative;">
+            <br>
+            <h2>This is a random div</h2>
+            <sab-button-flap
+                items       = "items"
+                orientation = "bottom">
+            </sab-button-flap>
+        </div>
     </div>
 
     <sab-button-flap
         items       = "items"
-        orientation = "left" />
+        orientation = "right">
+    </sab-button-flap>
+
+
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.8/angular.min.js"></script>
     <script src="flap.js"></script>
+
     <script>
         var app = angular.module('SampleFlap', ['sabhiram.button-flap']);
         app.controller('MainController', function ($scope, $timeout) {
             $timeout(function() {
                 $scope.items = [
                     ["fa-hacker-news", "https://news.ycombinator.com"],
-                    ["fa-google", "https://google.com"],
-                    ["fa-github", "https://github.com/sabhiram"]
+                    ["fa-google"     , "https://google.com"          ],
+                    ["fa-github"     , "https://github.com/sabhiram" ]
                 ];
             });
         });

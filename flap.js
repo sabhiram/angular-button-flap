@@ -30,10 +30,9 @@ module.directive("sabButtonFlap", function($window) {
         transclude: true,
 
         template: [
-            "<div id='sab-flap-container' ng-mouseenter='focused = true' ng-mouseleave='focused = false'>",
-            //"    <pre>{{ orientation }}</pre>",
-            "    <div class='sab-flap-item row' ng-repeat='item in items' ng-click='goto_url(item[1])'>",
-            "        <i class='fa fa-lg {{item[0]}}'></i> TEST",
+            "<div class='sab-flap-container {{orientation}}' ng-mouseenter='focused = true' ng-mouseleave='focused = false'>",
+            "    <div class='sab-flap-item' ng-repeat='item in items' ng-click='goto_url(item[1])'>",
+            "        <i class='fa fa-lg {{item[0]}}'></i>",
             "    </div>",
             "</div>",
         ].join("\n"),
