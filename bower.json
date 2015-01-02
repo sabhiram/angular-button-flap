@@ -1,0 +1,22 @@
+{
+  "name": "angular-button-flap",
+  "version": "1.0.0",
+  "authors": [
+    "Shaba Abhiram <shabarivas@gmail.com>"
+  ],
+  "description": "Button flap for pages",
+  "main": "flap.js",
+  "keywords": [
+    "angularjs",
+    "button flap"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/sabhiram/angular-button-flap"
+}

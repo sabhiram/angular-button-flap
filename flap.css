@@ -1,0 +1,8 @@
+#sab-flap-container {
+    position: absolute;
+
+    background-color: white;
+
+    right: 0; width: 50px;
+    top: 100px; height: 200px;
+}
