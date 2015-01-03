@@ -26,7 +26,7 @@ module.directive("sabButtonFlap", function($window) {
         scope: {
             items:           "=",
             orientation:     "@",
-            expand_on_hover: "="
+            expand:          "=expandOnHover"
         },
 
         replace:    true,
@@ -34,25 +34,27 @@ module.directive("sabButtonFlap", function($window) {
 
         template: [
             "<div class         = 'sab-flap-container {{orientation}}'",
+            "     ng-class      = '{\"expand-on-hover\": expand}'",
             "     ng-mouseenter = 'focused = true'",
             "     ng-mouseleave = 'focused = false' >",
-            "",
+
             "    <div class     = 'sab-flap-item'",
             "         ng-repeat = 'item in items'",
             "         ng-click  = 'goto_url(item[1])' >",
-            "",
+
             "         <i class = 'fa fa-lg {{item[0]}}'></i>",
             "    </div>",
-            "",
+
             "</div>",
         ].join("\n"),
 
         link: function(scope, element, attributes) {
-            scope.orientation = scope.orientation || "right";
-
             scope.goto_url = function(url) {
                 $window.location.href = url
             }
+
+            scope.orientation = scope.orientation || "right";
+            scope.expand_on_hover = scope.expand_on_hover || false;
         }
     };
 });
