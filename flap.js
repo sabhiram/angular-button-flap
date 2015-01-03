@@ -9,7 +9,7 @@ Dependencies:
 
 Inputs:
     =items           - An array with the following touples:
-                        [[icon class, name, url] ... ]
+                        [[icon class, url] ... ]
 
     @orientation     - Which wall to bind to: ["left", "top", "right"*, "bottom"]
 
@@ -19,7 +19,7 @@ Description:
     Button flap directive
 \******************************************************************************/
 var module = angular.module("sabhiram.button-flap", []);
-module.directive("sabButtonFlap", function($window) {
+module.directive("sabButtonFlap", function() {
     return {
         restrict: "E",
 
@@ -39,7 +39,7 @@ module.directive("sabButtonFlap", function($window) {
 
             "    <div class     = 'sab-flap-item'",
             "         ng-repeat = 'item in items'",
-            "         ng-click  = 'goto_url(item[1])' >",
+            "         ng-click  = 'item[1]()' >",
 
             "         <i class = 'fa fa-lg {{item[0]}}'></i>",
             "    </div>",
@@ -48,10 +48,6 @@ module.directive("sabButtonFlap", function($window) {
         ].join("\n"),
 
         link: function(scope, element, attributes) {
-            scope.goto_url = function(url) {
-                $window.location.href = url
-            }
-
             scope.orientation = scope.orientation || "right";
             scope.expand_on_hover = scope.expand_on_hover || false;
         }
