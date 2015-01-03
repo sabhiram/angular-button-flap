@@ -68,7 +68,7 @@ Description:
 module.filter("inject_expand_class", function() {
     return function(enable) {
         return (enable)
-            ? "expand-on-hover",
+            ? "expand-on-hover"
             : "";
     };
 });
