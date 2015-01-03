@@ -33,8 +33,7 @@ module.directive("sabButtonFlap", function($window) {
         transclude: false,
 
         template: [
-            "<div class         = 'sab-flap-container {{orientation}}'",
-            "     ng-class      = '{\"expand-on-hover\": expand}'",
+            "<div class         = 'sab-flap-container {{orientation}} {{expand | inject_expand_class}}'",
             "     ng-mouseenter = 'focused = true'",
             "     ng-mouseleave = 'focused = false' >",
 
@@ -56,5 +55,20 @@ module.directive("sabButtonFlap", function($window) {
             scope.orientation = scope.orientation || "right";
             scope.expand_on_hover = scope.expand_on_hover || false;
         }
+    };
+});
+
+/*****************************************************************************\
+Filter:
+    inject_expand_class
+
+Description:
+    Replaces boolean w/ class - this allows the user to assign an ngClass
+\*****************************************************************************/
+module.filter("inject_expand_class", function() {
+    return function(enable) {
+        return (enable)
+            ? "expand-on-hover",
+            : "";
     };
 });
