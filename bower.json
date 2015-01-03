@@ -1,6 +1,6 @@
 {
   "name": "angular-button-flap",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "authors": [
     "Shaba Abhiram <shabarivas@gmail.com>"
   ],
@@ -13,7 +13,11 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components"
+    "bower_components",
+    "bower.json",
+    "example.html",
+    "README.md",
+    ".gitignore"
   ],
   "dependencies": {
   },
